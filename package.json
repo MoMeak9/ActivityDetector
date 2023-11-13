@@ -1,0 +1,44 @@
+{
+  "name": "@auni/activity-detector",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "scripts": {
+    "dev": "father dev",
+    "build": "father build",
+    "build:deps": "father prebundle",
+    "prepublishOnly": "father doctor && npm run build",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "relase:pacth": "npm version patch -m \"build📦: release %s\" && npm run build && npm publish",
+    "relase:minor": "npm version minor -m \"build📦: release %s\" && npm run build && npm publish",
+    "relase:major": "npm version major -m \"build📦: release %s\" && npm run build && npm publish",
+    "relase:beta": "npm version prerelease --preid=beta -m \"build: release %s\" && npm run build && npm publish --tag beta",
+    "commit": "git add . && git cz && git push"
+  },
+  "keywords": [],
+  "authors": ["minlong"],
+  "maintainers": [
+    {
+      "name": "minlong"
+    }
+  ],
+  "license": "MIT",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "@typescript-eslint/parser": "^6.5.0",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "father": "^4.3.5",
+    "prettier": "^3.0.3"
+  }
+}
